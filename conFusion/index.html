@@ -29,14 +29,13 @@
                     <li class = "nav-item"><a class="nav-link" href = "./contactus.html"><span class = "fa fa-address-card fa-lg"></span>Contact</a></li>
                 </ul>
                 <span class = "navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
+                    <a class="fa fa-sign-in" id="myBtn">Login</a>
                 </span>
             </div>
         </div>
     </nav>
 
-     <div id="loginModal" class="modal fade" role="dialog">
+     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -64,7 +63,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button id = "loginCancel" type="button" class="btn btn-secondary btn-sm ml-auto " data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -74,16 +73,17 @@
     </div>
 
 
-    <div id="reserve-card" class="modal fade" role="dialog">
+    <div id="reserveModal" class="modal">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
+                    
                     <h4 class="modal-title">Reserve a Table </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                                            <form>
+                        <form>
                             <div class = "form-group row">
                                 <label for = "guests" class = "col-md-2 col-form-label"> Number of Guests</label>
                                 <div class= "col-md-10">
@@ -142,7 +142,7 @@
                             
                              <div class = "form-group row">
                                 <div class = "offset-md-2 col-md-10">
-                                    <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal" id = "reserveCancel">Cancel</button>
                                     <button type = "submit" class = "btn btn-primary">
                                         Reserve
                                     </button>
@@ -171,12 +171,11 @@
                         <img src = "img/logo.png" class = "img-fluid">
                     </div>
                     <div class = "col-12 col-sm align-self-center">
-                        <a data-toggle="modal" data-target="#reserve-card" role="button" class="btn btn-block nav-link btn-warning" href="#reserve-card">
-                        Reserve Table
-                        </a>
+                        <button id="reserveBtn" class="btn btn-block btn-warning">Reserve a Table</button>
                     </div>
                 </div>
                 </div>
+
             </div>
         </div>
     </header>
@@ -291,6 +290,42 @@
 
     
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
     <footer  class = "footer">
         <div class = "container">
             <div class = "row">             
@@ -332,10 +367,23 @@
            </div>
         </div>
     </footer>
+
    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#reserveBtn").click(function(){
+                $("#reserveModal").modal();
+            });
+        $("#myBtn").click(function(){
+            $("#myModal").modal();
+            });
+        });
+    </script>
+    
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 1000 } );
