@@ -10,10 +10,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -89,9 +91,9 @@
         </div>
 
         <div class="row row-content">
-           <div class="col-12">
+            <div class="col-12">
               <h3>Send us your Feedback</h3>
-           </div>
+            </div>
             <div class="col-12 col-md-9">
                 <form>
                     <div class = "form-group row">
@@ -126,7 +128,7 @@
                     <div class = "form-group row">
                         <div class= "col-md-6 offset-md-2">
                             <div class = "form-check">
-                                <input type = "checkbox" class = "form-check-input" name="approve" id-"approve" value = "">
+                                <input type = "checkbox" class = "form-check-input" name="approve" id="approve" value = "">
                                 <label class = "form-check-label" for ="approve">
                                     <Strong>May we contact you</Strong>
                                 </label>
@@ -140,7 +142,7 @@
                         </div>
                     </div>
                     <div class = "form-group row">
-                        <label for = "feedback" class = "col-md-2 col-form-label"> Yor Feedback </label>
+                        <label for = "feedback" class = "col-md-2 col-form-label"> Your Feedback </label>
                         <div class= "col-md-10">
                             <textarea class = "form-control" id="feedback" name = "feedback" rows=12>
                             </textarea>
@@ -155,10 +157,7 @@
                     </div>
                 </form>
             </div>
-             <div class="col-12 col-md">
-            </div>
        </div>
-
     </div>
 
     <footer class="footer">
@@ -203,10 +202,12 @@
            </div>
         </div>
     </footer>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
